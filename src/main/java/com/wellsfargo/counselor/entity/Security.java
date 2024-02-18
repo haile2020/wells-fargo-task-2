@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.util.Date;
 @Entity
 public class Security {
+//    Field
     @Id
     @GeneratedValue()
     private long securityId;
@@ -26,6 +27,7 @@ public class Security {
  @ManyToOne(fetch = FetchType.LAZY)
  @JoinColumn(name = "portfolioId")
     private Portfolio portfolio;
+// Constructor
     protected Security(){
 
     }
@@ -37,7 +39,7 @@ public class Security {
         this.purchaseDate = purchaseDate;
         this.quantity =quantity;
     }
-
+// getter and setter
     public Long getSecurityId(){return  securityId;}
     public String getName(){ return name;}
 

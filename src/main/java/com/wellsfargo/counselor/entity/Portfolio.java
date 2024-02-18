@@ -3,10 +3,12 @@ package com.wellsfargo.counselor.entity;
 
 import jakarta.persistence.*;
 
+import java.lang.reflect.Field;
 import java.util.Date;
 import java.util.List;
 @Entity
 public class Portfolio {
+//    Field
     @Id
     @GeneratedValue()
     private long portfolioId;
@@ -22,7 +24,7 @@ public class Portfolio {
 
     @OneToMany(mappedBy = "portfolio",cascade = CascadeType.ALL)
     private List<Security> securities;
-
+//Constructor
     protected Portfolio(){
 
     }
@@ -31,6 +33,7 @@ public class Portfolio {
         this.creationDate = creationDate;
     }
 
+//    getter and setter
     public Long getPortfolioId(){return portfolioId;}
 
     public void setPortfolioId(long portfolioId) {

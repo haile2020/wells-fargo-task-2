@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.util.List;
 @Entity
 public class Client {
+//    Fields
     @Id
     @GeneratedValue()
     private long clientId;
@@ -30,6 +31,8 @@ public class Client {
 
     @OneToMany(mappedBy = "advisor", cascade = CascadeType.ALL)
     private List<Client> clients;
+
+//    Constructor
     protected Client(){
 
     }
@@ -42,6 +45,7 @@ public class Client {
         this.email = email;
     }
 
+    //getter and setter
     public  Long getClientId(){ return clientId;}
 
     public String getFirstName() {
